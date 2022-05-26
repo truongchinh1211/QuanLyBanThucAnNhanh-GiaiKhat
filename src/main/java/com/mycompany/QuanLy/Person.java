@@ -85,11 +85,12 @@ public abstract class Person {
         System.out.println("Nhap que quan:");
         setQueQuan(sc.nextLine());
         System.out.println("Nhap SDT:");
-        String phoneNumber = sc.nextLine();
-        while (phoneNumber.length() != 10) {
-            System.out.println("Dinh dang sdt khong dung (10 chu so), nhap lai:");
-            phoneNumber = sc.nextLine();
-        }
+        boolean check;String phoneNumber;
+        do{
+        phoneNumber = sc.nextLine();
+        check = phoneNumber.matches("0\\d{9}");
+        if(!check) System.out.println("Dinh dang sdt khong dung (10 chu so), nhap lai:");
+        }while (!check);
         setSdt(phoneNumber);
     }
 
