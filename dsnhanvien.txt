@@ -1,0 +1,10 @@
+P01, Nguyen Nhi, 2001, Nu, phucvu, Ha Noi, 0163954964, toi, 
+K01, Nguyen Van Sang, 1998, Nam, ketoan, Hai Phong, 0336459874, 3
+Q01, Tran Vu Do, 1989, Nam, quanly, Ben Tre, 0862863753, Kho hang
+P07, Alex Tran, 2001, nu, phucvu, dg, 0912342534, toi, 
+P03, Vu Thi Nuong, 2002, Nu, phucvu, HCM, 0333427156, sang, 
+Q02, Ly Thanh Huong, 1992, Nu, quanly, Hue, 0903124367, Nhan su
+K02, My Thu, 1995, Nu, ketoan, Binh Duong, 0163964898, 5
+P04, Trinh Van Quyet, 2000, Nam, phucvu, Tien Giang, 0909763451, toi, 
+P05, Trinh Thang Bang, 1999, Nam, phucvu, Can Tho, 0763123456, sang, 
+P06, Kathy Nguyen, 1997, Nu, phucvu, Bac Ninh, 0162456321, toi, 
