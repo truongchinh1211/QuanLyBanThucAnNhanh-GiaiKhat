@@ -44,6 +44,7 @@ public class DSBill {
             for(int i=0;i<BillList.length;i++)
             System.out.println(String.format("| %-3s | %-4s | %-20s |",(i+1),BillList[i].getBillID(),dtf.format(BillList[i].getBilldate())));
             System.out.println("-------------------------------------");
+            System.out.println("Nhap stt bill muon xem: ");
             int n = Integer.parseInt(sc.nextLine());
             n-=1;
             BillList[n].printBill();
