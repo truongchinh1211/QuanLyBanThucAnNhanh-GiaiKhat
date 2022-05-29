@@ -11,6 +11,7 @@ public class Console {
         dssp.docFileDSProduct();
         DSPerson dsP = new DSPerson();
         dsP.docFileDsPerson();
+        DSBill b = new DSBill();
         AccountList acc = new AccountList();
         int function=0;
         do{
@@ -20,7 +21,7 @@ public class Console {
            try{    
                function = Integer.parseInt(sc.nextLine());
                 switch(function){
-                    case 1: SanPhamConsole(dssp);break;
+                    case 1: SanPhamConsole(dssp,b);break;
                     case 2:
                         System.out.printf("Doanh thu tu ban hang la: %.2f VND%n", DSBill.getDoanhThu());
                         System.out.printf("Von chi cho nhap hang: %.2f VND%n", PhieuNhapHang.getVonMuaHang());
@@ -47,12 +48,12 @@ public class Console {
         }while(function!=5); System.out.println("Cam on ban da su dung chuong trinh ^^");
         
     }
-    public void SanPhamConsole(DSProduct dssp)
+    public void SanPhamConsole(DSProduct dssp,DSBill b)
     {
         int choice=0;
         do  {
             System.out.println("\t•~•San pham•~•");
-            System.out.printf("%-18s%-18s\n%-18s%-18s\n%-18s%-18s\n%-18s%-18s\n","1.Hien thi sp","2.Them sp","3.Chinh sua sp","4.Xoa sp","5.Nhap hang","6.Order mon","7.Tinh bill","8.Quay lai");          
+            System.out.printf("%-18s%-18s\n%-18s%-18s\n%-18s%-18s\n%-18s%-18s\n%s\n","1.Hien thi sp","2.Them sp","3.Chinh sua sp","4.Xoa sp","5.Nhap hang","6.Order mon","7.Tinh bill","8.Xem ds bill","9.Quay lai");          
             try{
                 choice =  Integer.parseInt(sc.nextLine());
                 switch (choice) {
@@ -73,17 +74,17 @@ public class Console {
                         o.makeOrderList();
                         break;
                     case 7:
-                        DSBill b = new DSBill();
                         b.makeBillList();
                         dssp.ghiFileDSProduct();
                         break;                         
-                    case 8: break;
+                    case 8: b.show(); break;
+                    case 9: break;
                     default: System.out.println("Vui long nhap dung chuc nang!!");
             }
             } catch (NumberFormatException E){
                 System.out.println("Gia tri can nhap la so!!!");
             }
-        } while (choice != 8);
+        } while (choice != 9);
         }
     public void QuanLyPermission(DSPerson dsP)
     {

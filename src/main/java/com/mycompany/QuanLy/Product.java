@@ -50,14 +50,14 @@ public class Product {
         setProductName(sc.nextLine());
         System.out.println("Nhap don gia san pham:");
         double gia = Double.parseDouble(sc.nextLine());
-        while (gia<0) {
+        while (gia<=0) {
             System.out.println("Gia tien san pham khong duoc nho hon 0!");
             gia = Double.parseDouble(sc.nextLine());
         }
         setDonGia(gia);
         System.out.println("Nhap so luong:");
         int sl = Integer.parseInt(sc.nextLine());
-        while (sl<0) {
+        while (sl<=0) {
             System.out.println("so luong khong duoc nho hon 0!");
             sl = Integer.parseInt(sc.nextLine());
         }

@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Order {
     private String OrderID;
-    private  String CustomerName;
     private  String OrderNameproductList[];
     private int soluongOrder[];
 
@@ -12,9 +11,6 @@ public class Order {
 
     public Order(){}
 
-    public void setCustomerName(String customerName) {
-        CustomerName = customerName;
-    }
     public void setOrderID(String orderID) {
         OrderID = orderID;
     }
@@ -23,9 +19,6 @@ public class Order {
     }
     public void setSoluongOrder(int[] soluong) {
         soluongOrder = soluong;
-    }
-    public  String getCustomerName() {
-        return CustomerName;
     }
     public String getOrderID() {
         return OrderID;
@@ -42,8 +35,6 @@ public class Order {
         
         System.out.println("Nhap Id order:");
         setOrderID(sc.nextLine());
-        System.out.println("Nhap ten khach hang:");
-        setCustomerName(sc.nextLine());
         System.out.println("Nhap so luong mon an:");
         int n = Integer.parseInt(sc.nextLine());
         while(n<=0){

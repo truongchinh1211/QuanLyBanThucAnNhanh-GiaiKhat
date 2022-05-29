@@ -1,5 +1,6 @@
 package com.mycompany.QuanLy;
 
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class DSBill {
@@ -31,5 +32,22 @@ public class DSBill {
             doanhThu += BillList[i].getTongTienBill();
         }
     }
-
+    public void show()
+    {
+        
+        if(BillList!=null){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        System.out.println(" \"---- Danh sach bill ----\"");
+        System.out.println("-------------------------------------");
+        System.out.printf("| %-3s | %-4s | %-20s |%n","stt","Id","Date" );
+        System.out.println("-------------------------------------");
+            for(int i=0;i<BillList.length;i++)
+            System.out.println(String.format("| %-3s | %-4s | %-20s |",(i+1),BillList[i].getBillID(),dtf.format(BillList[i].getBilldate())));
+            System.out.println("-------------------------------------");
+            int n = Integer.parseInt(sc.nextLine());
+            n-=1;
+            BillList[n].printBill();
+    }
+        else System.out.println("Khong co bill nao trong danh sach");
+}
 }

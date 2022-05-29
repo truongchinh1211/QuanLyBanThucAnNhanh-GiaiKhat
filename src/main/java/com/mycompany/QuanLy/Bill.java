@@ -56,6 +56,8 @@ public class Bill {
         setBilldate(LocalDateTime.now());
         System.out.println("Nhap id cua bill:");
         setBillID(sc.nextLine());
+        System.out.println("Nhap ten khach hang: ");
+        setCustomerName(sc.nextLine());
         System.out.println("Nhap id cua don Order:");
         // tim trong order list //
         Order Orderlist[] = DSOrder.getOrderlist();
@@ -64,8 +66,7 @@ public class Bill {
         do{
             String orID = sc.nextLine();
             for(int i=0; i<Orderlist.length; i++){
-                if(Orderlist[i].getOrderID().equalsIgnoreCase(orID)){
-                    setCustomerName(Orderlist[i].getCustomerName());
+                if(Orderlist[i].getOrderID().equalsIgnoreCase(orID)){                    
                     setDSSPBill(Orderlist[i].getOrderNameproductList());
                     setSoluongSpBill(Orderlist[i].getSoluongOrder());
                     flag1 = true;
@@ -89,7 +90,7 @@ public class Bill {
                 }
             }
             if (flag == false) {
-                System.out.println("Xin loi, san pham '"+ DSSPBill[i] +"' da het hang!");
+                System.out.println("Xin loi, san pham '"+ DSSPBill[i] +"' ko du hang!");
                 SoluongSpBill[i] = 0;
             }
         }

@@ -41,8 +41,13 @@ public class nhapHang {
         for (int i = 0; i < productList.length; i++) {
             if (productName.equalsIgnoreCase(productList[i].getProductName())){
                 flag=true;
+                int check = 0;
                 System.out.println("Nhap so luong:");
-                setSoLuongNhap(Integer.parseInt(sc.nextLine()));
+                do {
+                    check=Integer.parseInt(sc.nextLine());
+                    if(check<=0) System.out.println("So luong nhap phai lon hon 0!!");
+                } while(check<=0);
+                setSoLuongNhap(check);
                 setDonGia((productList[i].getDonGia())*tiTrongGia);
                 int newsl = productList[i].getSoLuong() + soLuongNhap;
                 productList[i].setSoLuong(newsl);
